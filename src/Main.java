@@ -22,7 +22,6 @@ public class Main {
                 }
                 stringNumber = in.next();
         }
-
         avg = sumNumber/count;
 
         System.out.println("The average is " + avg);
