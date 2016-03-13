@@ -6,18 +6,20 @@ public class Main {
         String stringNumber;
         double avg;
         double count = 0;
-        double number = 0, sumNumber = 0;
+        double number, sumNumber = 0;
         Scanner in = new Scanner(System.in);
-        System.out.println("Please enter numbers to average, enter '*' to run:");
+        System.out.println("Please enter numbers to average, enter '*' to calculate average:");
         stringNumber = in.next();
-        TryParseIn(stringNumber);
 
 
-        while (!stringNumber.equals("*") && true)
+        while (!stringNumber.equals("*"))
         {
-                number = Double.parseDouble(stringNumber);
-                sumNumber = sumNumber + number;
-                count++;
+                //TryParseIn(stringNumber);
+                if (TryParseIn(stringNumber)){
+                    number = Double.parseDouble(stringNumber);
+                    sumNumber = sumNumber + number;
+                    count++;
+                }
                 stringNumber = in.next();
         }
 
@@ -27,14 +29,15 @@ public class Main {
     }
 
 
-        private static boolean TryParseIn(String number){
+    private static boolean TryParseIn(String number){
         try {
             Double.parseDouble(number);
             return true;
         } catch (NumberFormatException e) {
-            System.out.println("You did not enter a number.");
+            System.out.println("Value can't be parsed as a number, please try again!");
             return false;
         }
+
 
     }
 
