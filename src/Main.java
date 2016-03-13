@@ -14,7 +14,6 @@ public class Main {
 
         while (!stringNumber.equals("*"))
         {
-                //TryParseIn(stringNumber);
                 if (TryParseIn(stringNumber)){
                     number = Double.parseDouble(stringNumber);
                     sumNumber = sumNumber + number;
